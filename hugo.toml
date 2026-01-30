@@ -3,7 +3,7 @@ languageCode = 'en-us'
 title = 'My New Hugo Site'
   
 theme = "hugo-universal-theme"
-themesDir = "./themes" 
+themesDir = "themes" 
 
 # Site language. Available translations in the theme's `/i18n` directory.
 defaultContentLanguage = "en"
