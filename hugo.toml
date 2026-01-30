@@ -13,7 +13,7 @@ summaryLength = 70
 
 # not pluralize title pages by default
 pluralizelisttitles = false
-
+ 
 [services]
     # Enable comments by entering your Disqus shortname
     [services.disqus]
