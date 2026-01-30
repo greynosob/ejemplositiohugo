@@ -1,4 +1,6 @@
-baseURL = 'https://greynosob.github.io/ejemplohugo/'
+baseURL = "https://greynosob.github.io/ejemplohugo/"
+canonifyURLs = true
+
 languageCode = 'en-us'
 title = 'My New Hugo Site'
   
