@@ -32,7 +32,7 @@ jobs:
           personal_token: ${{ secrets.PAGES_REPO_TOKEN }}
 
           # Repo destino (Repo B)
-          external_repository: greynosob/greynosob.github.io
+          external_repository: greynosob/ejemplohugo
 
           # Branch del repo B donde se publicará el HTML
           publish_branch: main
