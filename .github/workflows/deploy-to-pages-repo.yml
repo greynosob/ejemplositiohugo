@@ -1,0 +1,44 @@
+name: Build Hugo and push to Pages repo
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout source repo
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          fetch-depth: 0
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: "0.125.7"
+          extended: true
+
+      - name: Build site
+        run: hugo --minify
+
+      - name: Deploy to Pages repo (push public/ to another repo)
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          # IMPORTANTE: este token debe tener permisos para escribir en el repo B
+          personal_token: ${{ secrets.PAGES_REPO_TOKEN }}
+
+          # Repo destino (Repo B)
+          external_repository: TU_USUARIO/TU_USUARIO.github.io
+
+          # Branch del repo B donde se publicará el HTML
+          publish_branch: main
+
+          # Carpeta generada por Hugo
+          publish_dir: ./public
+
+          # (opcional pero recomendado)
+          cname: ""  # si usas dominio custom, aquí podrías ponerlo o manejarlo en repo B
