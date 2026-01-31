@@ -1,0 +1,5 @@
+baseURL = "https://greynosob.github.io/ejemplohugo/"
+languageCode = "en-us"
+title = "Infinity | Comming Soon Hugo Template By Themefisher"
+theme = "infinity-hugo"
+removePathAccents = true
